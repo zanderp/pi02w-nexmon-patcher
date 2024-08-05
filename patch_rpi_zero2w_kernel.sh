@@ -37,6 +37,11 @@ restore_kernel() {
 clone_and_patch_kernel() {
     status "Cloning and patching the kernel"
     
+    # Create necessary directories
+    mkdir -p "${work_dir}/boot"
+    mkdir -p "${work_dir}/opt"
+    mkdir -p "${work_dir}/lib/firmware/brcm"
+
     # Clone firmware
     git clone -b "${firmware_branch}" --depth 1 "${firmware_repo}" "${work_dir}/rpi-firmware"
     cp -rf "${work_dir}/rpi-firmware/boot/"* "${work_dir}/boot/"
