@@ -49,7 +49,7 @@ clone_and_patch_kernel() {
     rm -rf "${work_dir}/rpi-firmware"
     
     # Clone Nexmon firmware
-    git clone "${nexmon_repo}" -b "${nexmon_branch}" "${base_dir}/nexmon" --depth 1
+    git clone "${nexmon_repo}" -b "${nexmon_branch}" "${base_dir}/nexmon"
     
     # Clone and build the kernel
     git clone --depth 1 "${re4son_repo}" -b "${kernel_branch}" "${work_dir}/usr/src/kernel"
